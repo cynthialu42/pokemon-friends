@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useReducer } from 'react';
+import { Route, Link, Switch, Redirect } from 'react-router-dom';
+import Home from './containers/Home';
+import Favorites from './containers/Favorites';
+import Header from './components/Header';
+import PokemonProvider from './PokemonContext';
+import { usePokemon } from './PokemonContext';
 
 function App() {
+  // const [id, setId] = useState(1);
+  // const { pokemonDispatch, setId } = usePokemon();
+  useEffect(() => {
+
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PokemonProvider>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/favorites" component={Favorites} />
+        <Redirect to="/" />
+      </Switch>
+    </PokemonProvider>
   );
 }
 

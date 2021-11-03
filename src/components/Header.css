@@ -1,0 +1,14 @@
+.headerStyles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 75px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: #CC0000;
+  color: white;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
